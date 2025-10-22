@@ -4,10 +4,7 @@
     {
         private readonly List<IPipelineStep<T>> _steps = new();
         public Pipeline() { }
-        public Pipeline(List<IPipelineStep<T>> steps)
-        {
-            _steps = steps;
-        }
+
         public Pipeline<T> AddStep(IPipelineStep<T> step)
         {
             _steps.Add(step);
