@@ -13,16 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddFluentValidationAutoValidation();
 
-
-// Adding Pipeline Steps in case the Pipeline will be used in other endpoints
-/*
-builder.Services.AddScoped<IPipelineStep<FeeContext>, BasicBuyerFeeStep>();
-builder.Services.AddScoped<IPipelineStep<FeeContext>, SpecialFeeStep>();
-builder.Services.AddScoped<IPipelineStep<FeeContext>, AssociationFeeStep>();
-builder.Services.AddScoped<IPipelineStep<FeeContext>, StorageFeeStep>();
-builder.Services.AddScoped<Pipeline<FeeContext>>();
-*/
-
+ 
 builder.Services.AddValidatorsFromAssemblyContaining<FeeRequestValidator>();
 
 //Adding Cors
