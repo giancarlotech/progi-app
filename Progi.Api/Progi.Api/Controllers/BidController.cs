@@ -10,12 +10,6 @@ namespace Progi.Api.Controllers
     [Route("api/[controller]")]
     public class BidController : ControllerBase
     {
-        private readonly Pipeline<FeeContext> _feePipeline;
-
-       /* public BidController(Pipeline<FeeContext> feePipeline)
-        {
-            _feePipeline = feePipeline;
-        }*/
 
         [HttpPost("calculate")]
         public IActionResult CalculateFees([FromBody] FeeRequest request)
