@@ -9,14 +9,12 @@ namespace Progi.Tests
         private readonly Pipeline<FeeContext> _pipeline;
 
         public FeePipelineTests()
-        { 
-            _pipeline = new Pipeline<FeeContext>(new IPipelineStep<FeeContext>[]
-            {
-                new BasicBuyerFeeStep(),
-                new SpecialFeeStep(),
-                new AssociationFeeStep(),
-                new StorageFeeStep()
-            });
+        {
+            _pipeline = new Pipeline<FeeContext>()
+                .AddStep(new BasicBuyerFeeStep())
+                .AddStep(new SpecialFeeStep())
+                .AddStep(new AssociationFeeStep())
+                .AddStep(new StorageFeeStep());
         }
 
         [Theory]
